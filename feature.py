@@ -8,11 +8,10 @@ import re
 
 #xp = np
 
-#辞書
 Chiral = {"CHI_UNSPECIFIED":0,  "CHI_TETRAHEDRAL_CW":1, "CHI_TETRAHEDRAL_CCW":2, "CHI_OTHER":3}
 Hybridization = {"UNSPECIFIED":0, "S":1, "SP":2, "SP2":3, "SP3":4, "SP3D":5, "SP3D2":6, "OTHER":7}
 
- # featurevectorのサイズ
+ # featurevector
 atomInfo = 21
 structInfo = 21
 lensize= atomInfo + structInfo
@@ -20,17 +19,17 @@ lensize= atomInfo + structInfo
 H_Vector = [0]*atomInfo
 H_Vector[0]= 1
 
-#半角小文字判定
+
 lowerReg = re.compile(r'^[a-z]+$')
 def islower(s):
     return lowerReg.match(s) is not None
 
-#半角大文字判定
+
 upperReg = re.compile(r'^[A-Z]+$')
 def isupper(s):
     return upperReg.match(s) is not None
 
-#原子情報
+
 def calc_atom_feature(atom):
     
     if atom.GetSymbol() == 'H':   feature = [1,0,0,0,0]
