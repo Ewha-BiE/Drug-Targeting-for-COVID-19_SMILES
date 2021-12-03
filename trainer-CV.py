@@ -1,5 +1,5 @@
 #!/usr/bin/env python 
-# coding:utf-8
+# coding:utf-8 /////// for KSMCB
 
 import time, argparse, gc
 
@@ -30,7 +30,7 @@ import GPy
 import GPyOpt
 
 #-------------------------------------------------------------
- # featurevectorのサイズ
+ # featurevector
 atomInfo = 21
 structInfo = 21
 lensize = atomInfo + structInfo
